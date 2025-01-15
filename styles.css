@@ -1,0 +1,164 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sky */
+.sky {
+    width: 100%;
+    height: 60%;
+    background-color: #ffffff;
+    background-image: linear-gradient(315deg, #ffffff 0%, #5899e2 74%);
+    position: absolute;
+    top: 0;
+}
+
+/* Sea */
+.sea {
+    width: 100%;
+    height: 40%;
+    background-color: #fefefe;
+    background-image: linear-gradient(315deg, #fefefe 0%, #00a4e4 74%);
+    position: absolute;
+    bottom: 15%;
+    clip-path: polygon(0 20%, 100% 30%, 100% 150%, 0% 200%);
+    animation: wavesea 15s linear infinite alternate;
+    background-size: 200% auto; /* Double the width */
+}
+
+/* Sand */
+.sand {
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom, #f4a460 0%, #d2b48c 100%);
+    position: absolute;
+    bottom: 0;
+    clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* Tree Styling */
+.box-canvas {
+  position: absolute;
+  bottom: 10%;
+  right: -10vmin; /* Shifted to the right */
+  width: 40vmin; /* Smaller size */
+  height: 40vmin; /* Smaller size */
+  overflow: visible;
+}
+
+.box-canvas::before {
+  content: '';
+  position: absolute;
+  width: 40vmin; /* Adjusted size */
+  height: 15vmin; /* Adjusted size */
+  border-radius: 34% 66% 50% 78% / 56% 30% 70% 44%;
+  background: linear-gradient(to bottom, #f4a460 0%, #d2b48c 100%);
+  bottom: -5vmin; /* Adjusted position */
+  right: 10vmin; /* Adjusted position */
+}
+
+.tree {
+  --tree-color: #A45B17;
+  --tree-color-dark: #843C02;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25vmin; /* Adjusted size */
+  height: 35vmin; /* Adjusted size */
+  background: repeating-radial-gradient(circle at top,
+    var(--tree-color),
+    var(--tree-color) 4vmin,
+    var(--tree-color-dark) 4vmin,
+    var(--tree-color-dark) 4.5vmin
+  );
+  border-radius: 50% 0% / 100% 0;
+}
+
+.tree::before {
+  content: '';
+  position: absolute;
+  right: -7.5vmin; /* Adjusted position */
+  width: 25vmin; 
+  height: 35vmin;
+  background: var(--tree-color-dark);
+  border-radius: 50%;
+}
+
+.cutout {
+  position: absolute;
+  right: -10vmin; /* Adjusted position */
+  top: -1vmin; /* Adjusted position */
+  width: 25vmin; 
+  height: 37.5vmin;
+  background: #7BBDE5;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.cutout::before {
+  content: '';
+  position: absolute;
+  width: 15vmin; /* Adjusted size */
+  height: 10vmin; /* Adjusted size */
+  background: linear-gradient(to bottom, #f4a860 0%, #d2b88c 100%);
+  border-radius: 0 50% 50% 0;
+  bottom: 0;
+}
+
+.leaf {
+  position: absolute;
+  background: linear-gradient(65deg, #66B711, #66B711 50%, #56AB10 50%, #56AB10);
+  width: 12.5vmin; /* Adjusted size */
+  height: 22.5vmin; /* Adjusted size */
+  border-radius: 0% 100% 0% 100% / 30% 100% 0% 70%;
+}
+
+.leaf:nth-child(3) {
+  transform: rotate(-20deg);
+  left: 18vmin; /* Adjusted position */
+  top: -0.5vmin; /* Adjusted position */
+}
+
+.leaf:nth-child(2) {
+  left: 22vmin; /* Adjusted position */
+  transform: rotate(-60deg);
+  top: -6.5vmin; /* Adjusted position */
+}
+
+.leaf:nth-child(4) {
+  transform: rotate(300deg);
+  top: -9vmin; /* Adjusted position */
+  left: 0vmin;
+}
+
+.leaf:nth-child(5) {
+  transform: rotate(260deg);
+  top: 0vmin;
+  left: 2vmin; /* Adjusted position */
+}
+
+.leaf::before {
+  content: '';
+  position: absolute;
+  width: 0; 
+  height: 0; 
+  border-left: 1vmin solid transparent; /* Adjusted size */
+  border-right: 1vmin solid transparent; /* Adjusted size */
+  border-bottom: 3vmin solid transparent; /* Adjusted size */
+}
+
+.leaf:nth-child(2)::before {
+  bottom: 5vmin; /* Adjusted position */
+  left: 2.
+}
